@@ -4,10 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/ani.css">
     <link rel="stylesheet" href="./css/styles.css">
     <title>Word Guessing Game</title>
 </head>
-<body>
-    
+<body class="">
+    <div class="gameboard">
+        <!-- overlay -->
+        <div class="overlay show">
+            <h1>Wheel Of Success</h1>
+            <p>Things Developers Say</p>
+            <button class="overlay-btn">Let's Play</button>
+        </div>
+        <div class="theme-toggle">
+            <div class="light theme-option"></div>
+            <div class="dark theme-option"></div>
+        </div>
+        <!-- phrase-display -->
+        <div class="phrase-display">
+            <ul>
+            </ul>
+        </div>
+        <!-- keyboard -->
+        <div class="keyboard">
+            <ul>
+                <li>Q</li>
+                <li>W</li>
+                <li>E</li>
+                <li>R</li>
+                <li>T</li>
+                <li>Y</li>
+                <li>U</li>
+                <li>I</li>
+                <li>O</li>
+                <li>P</li>
+            </ul>
+            <ul>
+                <li>A</li>
+                <li>S</li>
+                <li>D</li>
+                <li>F</li>
+                <li>G</li>
+                <li>H</li>
+                <li>J</li>
+                <li>K</li>
+                <li>L</li>
+            </ul>
+            <ul>
+                <li>Z</li>
+                <li>X</li>
+                <li>C</li>
+                <li>V</li>
+                <li>B</li>
+                <li>N</li>
+                <li>M</li>
+            </ul>
+        </div>
+        <!-- hearts -->
+        <div class="heart-display">
+            <ul>
+                <li><img src="./assets/hearts/liveHeart.png" alt="live heart"></li>
+                <li><img src="./assets/hearts/liveHeart.png" alt="live heart"></li>
+                <li><img src="./assets/hearts/liveHeart.png" alt="live heart"></li>
+                <li><img src="./assets/hearts/liveHeart.png" alt="live heart"></li>
+                <li><img src="./assets/hearts/liveHeart.png" alt="live heart"></li>
+            </ul>
+        </div>
+    </div>
+    <script src="./app.js"></script>
 </body>
 </html>

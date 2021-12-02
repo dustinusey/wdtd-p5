@@ -1,3 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+body.whoturnedoffthelights .gameboard {
+  background: #30373e;
+}
+body.whoturnedoffthelights .keyboard ul li {
+  background: #5a6268;
+  color: white;
+  text-shadow: 0 4px 12px rgba(137, 236, 242, 0.9);
+}
+body.whoturnedoffthelights .keyboard ul li.clicked {
+  opacity: 0.1;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #30373e;
+  position: fixed;
+  top: 100%;
+  left: 0;
+  transition: top 0.7s;
+  z-index: 100;
+}
+.overlay.show {
+  top: 0;
+}
+.overlay.show.youkindasuck {
+  background: #ffabab;
+  animation: bounceInDown 1s ease forwards;
+}
+.overlay.show.youkindasuck h1 {
+  color: #30373e;
+}
+.overlay.show.youkindasuck button {
+  background: #30373e;
+  color: #ffabab;
+}
+.overlay.show.youkindadontsuck {
+  background: #89ecf2;
+  animation: tada 1s ease forwards;
+}
+.overlay.show.youkindadontsuck h1 {
+  color: #30373e;
+}
+.overlay.show.youkindadontsuck button {
+  background: #30373e;
+  color: #89ecf2;
+}
+.overlay h1 {
+  color: white;
+  font-weight: 300;
+  transition: 1s;
+}
+.overlay h1.hide {
+  opacity: 0;
+}
+.overlay p {
+  color: #89ecf2;
+  margin-bottom: 2rem;
+  transition: 1s;
+}
+.overlay p.hide {
+  opacity: 0;
+  margin: 3rem auto;
+  font-size: 5rem;
+}
+.overlay button {
+  background: #89ecf2;
+  color: #30373e;
+  border-radius: 25px;
+  padding: 0.25rem 1.25rem;
+  font-size: 1.1rem;
+  border: none;
+  width: 175px;
+  cursor: pointer;
+  transition: width 0.3s, opacity 1s;
+}
+.overlay button.hide {
+  opacity: 0;
+}
+.overlay button:hover {
+  width: 200px;
+}
+
+.gameboard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: #dde9ef;
+  transition: background 1s;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.theme-toggle .theme-option {
+  height: 25px;
+  width: 25px;
+  min-height: 25px;
+  min-width: 25px;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #8d8d8d;
+}
+.theme-toggle .theme-option.light {
+  background: white;
+  margin-right: 0.25rem;
+}
+.theme-toggle .theme-option.dark {
+  background: #6a6e70;
+}
+.theme-toggle .theme-option:hover {
+  transform: scale(1.2);
+}
+
+.phrase-display {
+  width: 100%;
+  margin: auto;
+}
+.phrase-display ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.phrase-display ul li {
+  height: 60px;
+  width: 60px;
+  min-height: 60px;
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  border-radius: 8px;
+  margin: 1rem 0.2rem;
+}
+.phrase-display ul li.letter {
+  background: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
+  text-transform: uppercase;
+  transition: background 1s;
+  color: transparent;
+}
+.phrase-display ul li.letter.show {
+  background: #89ecf2;
+  box-shadow: none;
+  border-color: #73cbd0;
+  animation: rubberBand 1s ease forwards;
+  color: #30373e;
+}
+.phrase-display ul li.space {
+  height: 20px;
+  width: 20px;
+  min-height: 20px;
+  min-width: 20px;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+.keyboard ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.keyboard ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  background: #ffffff;
+  border-radius: 5px;
+  margin: 0.25rem;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.08);
+  transition: 0.2s, background 1s;
+  cursor: pointer;
+}
+.keyboard ul li.clicked {
+  opacity: 0.3;
+  pointer-events: none;
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+.keyboard ul li:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.heart-display {
+  margin: 3rem auto;
+}
+.heart-display ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.heart-display ul li {
+  margin: 0 0.25rem;
+}
+.heart-display ul li img {
+  width: 2rem;
+  transition: width 1s;
+  animation: heartBeat 3s ease infinite;
+}
+.heart-display ul li img.lostheart {
+  animation: wobble 1s ease forwards;
+  width: 1.4rem;
+}
 
 /*# sourceMappingURL=styles.css.map */
