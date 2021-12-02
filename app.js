@@ -75,7 +75,6 @@ const gameboard = {
 
 const keyboard = {
     currentClick: "",
-    
     handleClicks: () => {
         const keyboard = document.querySelector('.keyboard');
         keyboard.addEventListener('click', e => {
