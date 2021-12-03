@@ -25,7 +25,7 @@ const overlay = {
                     p.style.display = 'none';
                 }, 1200);
             }
-            // condition for win/lose overlays that calls the restGame function
+            // condition for win/lose overlays that calls the resetGame function
             if (e.target.textContent === 'Play Again?') {
                 resetGame();
             }
@@ -171,7 +171,7 @@ const scoreCheck = {
     },
 }
 
-// restGame function
+// resetGame function
 // ** also makes calls to gameboardGetRandomPhrase & gameboard.addPhraseToDisplay
 const resetGame = () => {
     // reset phrase display
