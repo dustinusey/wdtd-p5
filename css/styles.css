@@ -24,6 +24,9 @@ body.whoturnedoffthelights .keyboard ul li {
 body.whoturnedoffthelights .keyboard ul li.clicked {
   opacity: 0.1;
 }
+body.whoturnedoffthelights .theme-toggle p {
+  color: #eee;
+}
 
 .overlay {
   height: 100vh;
@@ -114,9 +117,20 @@ body.whoturnedoffthelights .keyboard ul li.clicked {
 }
 
 .theme-toggle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
   position: fixed;
   bottom: 20px;
   right: 20px;
+}
+.theme-toggle p {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  color: #30373e;
+  transition: color 1s;
 }
 .theme-toggle .theme-option {
   height: 25px;
