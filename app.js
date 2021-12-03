@@ -5,7 +5,7 @@ const overlay = {
         const p = overlay.querySelector('p');
         const btn = overlay.querySelector('button.overlay-btn');
         overlay.addEventListener('click', e => {
-            if (e.target.textContent === `Let's Play` || 'Play Again?') {
+            if (e.target.textContent === `Let's Play` || e.target.textContent === 'Play Again?') {
                 gameboard.getRandomPhrase();
                 gameboard.addPhraseToDisplay();
                 heading.classList.add('hide');
