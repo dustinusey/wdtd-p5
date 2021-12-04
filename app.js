@@ -188,7 +188,7 @@ const resetGame = () => {
     const hearts = document.querySelectorAll('.heart-display img');
     hearts.forEach((img) => {
         img.classList.remove('lostheart');
-        img.src = './assets/hearts/liveheart.png';
+        img.src = './assets/hearts/liveHeart.png';
     });
     // resets lives
     gameboard.lives = 5;
